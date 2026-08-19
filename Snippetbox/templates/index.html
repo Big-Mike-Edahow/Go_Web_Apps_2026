@@ -1,0 +1,33 @@
+<!-- index.html -->
+
+{{define "title"}} Home {{end}}
+{{define "content"}}
+
+<section class="content">
+    <h1 class="headline-h1">Latest Snippets</h1>
+    <br><br>
+    {{if .Snippets}}
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Created</th>
+            <th>Id</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        {{range .Snippets}}
+        <tr>
+            <td><a href='/view/{{.Id}}'>{{.Title}}...</a></td>
+            <td id="created">{{.Created.Format "Monday, Jan 2, 2006"}}</td>
+            <td>#{{.Id}}</td>
+            <td><a class="button" href="/edit/{{.Id}}">Edit</a></td>
+            <td><a class="button" href="/delete/{{.Id}}">Delete</a></td>
+        </tr>
+        {{end}}
+    </table>
+    {{else}}
+    <p>There's nothing to see here... yet!</p>
+    {{end}}
+</section>
+
+{{end}}
+

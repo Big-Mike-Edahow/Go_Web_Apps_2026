@@ -1,0 +1,20 @@
+<!-- view.html -->
+
+{{define "title"}}View{{end}}
+{{define "content"}}
+
+<section class="flex-container">
+    <h1 class="headline-h1"><strong>Student Record 👨‍🎓</strong></h1>
+    <br>
+    <div class="record">
+        <p>Id: {{ .Id }}</p>
+        <p>Name: {{ .Name }}</p>
+        <p>Age: {{ .Age }}</p>
+        <p>Major: {{ .Major }}</p>
+        <br><br>
+        <time><i>Record Created On: {{.Created.Format "Monday, Jan 2, 2006"}}</i></time>
+    </div>
+</section>
+
+{{end}}
+

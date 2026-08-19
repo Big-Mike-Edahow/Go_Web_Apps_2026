@@ -1,0 +1,24 @@
+<!-- index.html -->
+
+{{define "title"}} Home {{end}}
+{{define "content"}}
+
+<section class="container">
+    <h1>Items...🪣</h1>
+    <hr>
+    <ul>
+        {{range .}}
+        <li>
+            <h3>{{.Title}}</h3>
+        </li>
+        <li>{{.Body}}</li>
+        <li><a class="button" href="/edit?id={{.Id}}">Edit</a>
+            <a class="button" href="/delete?id={{.Id}}">Delete</a>
+        </li>
+        <br>
+        {{end}}
+    </ul>
+</section>
+
+{{end}}
+

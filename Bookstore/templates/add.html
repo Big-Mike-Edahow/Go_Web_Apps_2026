@@ -1,0 +1,38 @@
+<!-- add.html -->
+
+{{define "title"}}Add{{end}}
+{{define "content"}}
+
+<section class="center">
+    <h1 class="headline-h1">Add a Book ✏️</h1>
+</section>
+<section class="container">
+    <form action="/add" method="POST">
+        <input type="hidden" name="id" value="{{.Id}}">
+        <p>
+            <label>ISBN: </label>
+            <input type="text" name="isbn" required>
+        </p>
+        <p>
+            <label>Title: </label>
+            <input type="text" name="title" required>
+        </p>
+        <p>
+            <label>Author: </label>
+            <input type="text" name="author" required>
+        </p>
+        <p>
+            <label>Price: </label></span>
+            <input type="number" step="0.01" name="price" required>
+        </p>
+        <p>
+            <label>Excerpt: </label>
+            <textarea name="excerpt" rows="5" cols="50" required></textarea>
+        </p>
+        <br><br>
+        <input type="submit" value="Add">
+    </form>
+</section>
+
+{{end}}
+

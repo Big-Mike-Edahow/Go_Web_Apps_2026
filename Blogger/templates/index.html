@@ -1,0 +1,28 @@
+<!-- index.html -->
+
+{{define "title"}}Home{{end}}
+{{define "content"}}
+
+<h3>Create a New Post</h3>
+<form method="POST" action="/save">
+    <input type="text" name="title" placeholder="Title" required><br>
+    <textarea name="content" placeholder="Content" rows="2" required></textarea><br>
+    <input type="submit" value="Add Post">
+</form>
+<br>
+<h3>Recent Posts</h3>
+<section class="post">
+    <ul>
+        {{range .}}
+        <li>
+            <a href="/view?id={{.Id}}">{{.Title}}</a> —
+            <small><time>{{.Created.Format "Jan 02, 2006 at 3:04PM"}}</time></small>
+        </li>
+        {{else}}
+        <li>No posts yet. Be the first to create one!</li>
+        {{end}}
+    </ul>
+</section>
+
+{{end}}
+

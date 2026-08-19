@@ -1,0 +1,35 @@
+<!-- view.html -->
+
+{{define "title"}}View{{end}}
+{{define "content"}}
+
+<p><a href="/">&larr; Back to Home</a></p>
+
+<section class="post">
+    <h1>{{.Post.Title}}</h1>
+    <p><small>Published on: <time>{{.Post.Created.Format "Jan 02, 2006 at 3:04PM"}}</time></small></p>
+    <p style="white-space: pre-wrap;">{{.Post.Content}}</p><span>
+        <a class="button" href="/edit?id={{.Post.Id}}">Edit</a>
+        <a class="button" href="/delete?id={{.Post.Id}}">Delete</a>
+    </span>
+</section>
+<br>
+<h3>Comments...💬</h3>
+<section class="comments-section">
+    <ul class="comment">
+        {{range .Comments}}
+        <li>{{.Content}} — <small>{{.Created.Format "Jan 02, 2006 at 3:04PM"}}</small></li>
+        {{else}}
+        <li>No comments yet.</li>
+        {{end}}
+    </ul>
+</section>
+
+<h3>Add a Comment</h3>
+<form method="POST" action="/comment">
+    <input type="hidden" name="post_id" value="{{.Post.Id}}">
+    <input type="text" name="content" placeholder="Write a comment..." required>
+    <input type="submit" value="Submit Comment">
+</form>
+
+{{end}}

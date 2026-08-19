@@ -1,0 +1,24 @@
+<!-- create.html -->
+
+{{define "title"}}Create{{end}}
+
+{{define "content"}}
+
+<section class="center">
+    <h2>Add a Todo 📝</h2>
+    <br><br>
+    <div>
+        <form action="/create" method="post">
+            {{ with .Errors.Item }}
+            <p class="error">{{ . }}</p>
+            {{ end }}
+            <label class="label-area" for="item">Item</label>
+            <input class="text-area" type="text" name="item" placeholder="What do you want to do?">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+</main>
+
+{{end}}
+

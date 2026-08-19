@@ -1,0 +1,25 @@
+<!-- add.html -->
+
+{{define "title"}} Add {{end}}
+{{define "content"}}
+
+<section class="container">
+    <h1>Add an Item ⚽</h1>
+    <br>
+    <form method="POST" action="/add">
+        <p>
+            <label>Title: </label>
+            <input type="text" name="title" required>
+        </p>
+        <br>
+        <p>
+            <label>Body: </label>
+            <textarea name="body" rows="5" cols="50" required></textarea>
+        </p>
+        <br><br>
+        <input type="submit" value="Add">
+    </form>
+</section>
+
+{{end}}
+

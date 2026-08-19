@@ -1,0 +1,57 @@
+<!-- index.html -->
+
+{{define "title"}}Home{{end}}
+
+{{define "content"}}
+
+<section class="grid-container">
+    <section class="center">
+        <a class="add" href="/create"><button>Add a Todo 📝</button></a>
+        <br><br>
+    </section>
+    <section class="center">
+        <h2>Todos...🗒️</h2>
+        <br>
+        <table class="center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Item</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .}}
+                {{if .Completed}}
+                <tr>
+                    <td>{{.Id}}</td>
+                    <td class="item-completed"><strike>{{.Item}}</strike></td>
+                    <td class="status-yes">Completed</td>
+                    <td>
+                        <button disabled>Complete</button>
+                        <a href="/delete?id={{.Id}}"><button class="button-danger">Delete</button></a>
+                    </td>
+                    <td>{{.Created.Format "Monday, Jan 2, 2006"}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td>{{.Id}}</td>
+                    <td class="item-not-completed">{{.Item}}</td>
+                    <td class="status-no">Not Completed</td>
+                    <td>
+                        <a href="/update?id={{.Id}}"><button>Complete</button></a>
+                        <a href="/delete?id={{.Id}}"><button class="button-danger">Delete</button></a>
+                    </td>
+                    <td>{{.Created.Format "Monday, Jan 2, 2006"}}</td>
+                </tr>
+                {{end}}
+                {{end}}
+            </tbody>
+        </table>
+    </section>
+</section>
+
+{{end}}
+

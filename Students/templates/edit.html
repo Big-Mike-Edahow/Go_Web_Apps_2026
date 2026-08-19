@@ -1,0 +1,46 @@
+<!-- edit.html -->
+
+{{define "title"}}Edit{{end}}
+{{define "content"}}
+
+<section class="center">
+    <h1 class="headline-h1">Edit Record 🗂️</h1>
+    <br><br>
+</section>
+<section>
+    <form class="add-edit-container" action='/update?id={{.Id}}' method='POST'>
+        <input type="hidden" name="id" value="{{.Id}}">
+        <p>
+            {{ with .Errors.Name }}
+        <p class="error">{{ . }}</p>
+        {{ end }}
+        <label>Name: </label>
+        <input type='text' name='name' value="{{.Name}}">
+        </p><br>
+        <p>
+            {{ with .Errors.Age }}
+        <p class="error">{{ . }}</p>
+        {{ end }}
+        <label>Age: </label>
+        <input type="text" name="age" value="{{.Age}}">
+        </p><br>
+        <p>
+            {{ with .Errors.Major }}
+        <p class="error">{{ . }}</p>
+        {{ end }}
+        <label>Major: </label>
+        <select name="major" id="major">
+            <option value="Science">Science</option>
+            <option value="Art">Art</option>
+            <option value="Math">Math</option>
+            <option value="Programming">Programming</option>
+            <option value="Humanities">Humanities</option>
+        </select>
+        </p>
+        <br><br>
+        <input type="submit" value="Update Record">
+    </form>
+</section>
+
+{{end}}
+

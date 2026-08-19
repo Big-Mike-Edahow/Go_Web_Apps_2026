@@ -1,0 +1,186 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 12pt;
+}
+
+body {
+    background-color: azure;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(202, 224, 187);
+    border-bottom: 2px solid black;
+}
+
+nav h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    background-image: url("/static/images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 50px;
+    color: black;
+}
+
+nav a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: white;
+}
+
+main {
+    margin: 30px 20px 100px 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+hr {
+    width: 25%;
+    height: 5px;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    color: black;
+    background-color: black;
+}
+
+ul {
+    width: 75%;
+    margin: 10px;
+    padding: 10px;
+    background-color: ghostwhite;
+    list-style-type: none;
+}
+
+ul>li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 5px;
+    padding: 5px;
+}
+
+.button {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 3px 7px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid rgb(226, 195, 195);
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+.button:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+form {
+    display: table;
+}
+
+form p {
+    display: table-row;
+}
+
+form label {
+    display: table-cell;
+}
+
+form input {
+    display: table-cell;
+}
+
+form textarea {
+    display: table-cell;
+}
+
+form label {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: black;
+}
+
+form input[type=text] {
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form textarea {
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form input[type=submit] {
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(230, 192, 192);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+}
+
+form input[type=submit]:active {
+    box-shadow: inset 2px 2px 2px;
+}
+
+figure>img {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px;
+}
+
+figure>figcaption {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 3px;
+    padding: 3px;
+}
