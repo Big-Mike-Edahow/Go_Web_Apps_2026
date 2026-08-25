@@ -1,0 +1,27 @@
+<!-- info.html -->
+
+{{define "title"}}Info{{end}}
+{{define "content"}}
+
+<section class="container">
+    <h2>Application Info</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Environment</th>
+                <th>Version</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{.Status}}</td>
+                <td>{{.Environment}}</td>
+                <td>{{.Version}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+{{end}}
+

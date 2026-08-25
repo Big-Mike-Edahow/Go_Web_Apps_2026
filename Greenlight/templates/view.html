@@ -1,0 +1,22 @@
+<!-- view.html -->
+
+{{define "title"}}View{{end}}
+{{define "content"}}
+
+<section class="container">
+    <div class="metadata">
+        <h3><strong>{{.Title}}</strong></h3>
+        <p>Id: {{.Id}}</p>
+        <p>Year: {{.Year}}</p>
+        <p>Runtime: {{.Runtime}} minutes</p>
+        <p>Genre: {{.Genre}}</p>
+        <p><time>Created: {{.Created.Format "Monday, Jan 2, 2006"}}</time></p>
+    </div>
+    <br><br>
+    <span class="edit-delete">
+        <a class="button" href="/edit/{{.Id}}">Edit movie</a>
+        <a class="button-danger" href="/delete/{{.Id}}">Delete movie</a>
+    </span>
+</section>
+{{end}}
+

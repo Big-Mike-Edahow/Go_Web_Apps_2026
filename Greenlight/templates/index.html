@@ -1,0 +1,27 @@
+<!-- index.html -->
+
+{{define "title"}}Home{{end}}
+{{define "content"}}
+
+<section class="container">
+    <h2>Latest Movies</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .}}
+            <tr>
+                <td><a href="/view/{{.Id}}">{{.Title}}</a></td>
+                <td>{{.Created.Format "Monday, Jan 2, 2006"}}</td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+</section>
+
+{{end}}
+

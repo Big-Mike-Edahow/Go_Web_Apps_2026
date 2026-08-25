@@ -1,0 +1,32 @@
+<!-- create.html -->
+
+{{define "title"}}Create{{end}}
+{{define "content"}}
+
+<section class="container">
+    <h1 class="headline-h1">Add a new Movie 📽️</h1>
+    <br>
+    <form action="/create" method="POST">
+        <p>
+            <label>Title: </label>
+            <input type="text" name="title" required>
+        </p>
+        <p>
+            <label>Year: </label>
+            <input type="number" name="year" placeholder="YYYY" min="1900" max="2099" step="1" required>
+        </p>
+        <p>
+            <label>Runtime: </label>
+            <input type="number" name="runtime" placeholder="i.e., 120" min="1" step="1" required>
+        </p>
+        <p>
+           <label>Genre: </label>
+           <input type="text" name="genre" placeholder="i.e., Action/Adventure" required>
+        </p>
+        <br>
+        <input type="submit" value="Add Movie">
+    </form>
+</section>
+
+{{end}}
+
